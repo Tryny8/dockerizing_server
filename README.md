@@ -59,3 +59,10 @@ docker image rm tryny8/dockerizing_server
 ```sh
 docker pull tryny8/dockerizing_server
 ```
+# Edition des versions pour push vers DockerHub
+```sh
+docker build -t tryny8/dockerizing_server:0.0.0 -t tryny8/dockerizing_server .
+```
+```sh
+docker push tryny8/dockerizing_server --all-tags
+```
