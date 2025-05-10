@@ -32,3 +32,30 @@ docker build . -t dockerizing_server:latest
 ```sh
 ./dockerizing_server
 ```
+
+# Arpès le lancement sur dockerHub
+
+## Modification du fichier binaire "dockerizing_server"
+```sh
+GOOS=linux GOARCH=amd64 go build
+```
+## Exportation vers l'image docker
+```sh
+docker build . -t tryny8/dockerizing_server
+```
+## Lancement de l'image dans un conteneur
+```sh
+docker run -p 8080:8080  tryny8/dockerizing_server
+```
+## Push vers Hub
+```sh
+docker push tryny8/dockerizing_server
+```
+## Supprimer l'image du Hub
+```sh
+docker image rm tryny8/dockerizing_server
+```
+## Récupérer l'image du Hub
+```sh
+docker pull tryny8/dockerizing_server
+```
